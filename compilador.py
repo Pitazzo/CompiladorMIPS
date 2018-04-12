@@ -20,7 +20,8 @@ while argumentos[0] != 'fin':
 							 + ' ' + '00000000000'
 				print '\t' + salida
 				salida = salida.replace(' ', '')
-				print '\t' + hex(int(salida, 2)).zfill(8)
+				numCeros = 8 - len(hex(int(salida, 2))[2:])
+				print '\t' + '0'*numCeros + hex(int(salida, 2))[2:]
 			else:
 				if argumentos[0] == 'lw':
 					salida = '000010'
@@ -33,7 +34,11 @@ while argumentos[0] != 'fin':
 							 + ' ' + bin(int(argumentos[3]))[2:].zfill(16)
 				print '\t' + salida
 				salida = salida.replace(' ', '')
-				print '\t' + hex(int(salida, 2)).zfill(8)
+				numCeros = 8 - len(hex(int(salida, 2))[2:])
+				print '\t' + '0'*numCeros + hex(int(salida, 2))[2:]
+		elif argumentos[0] == 'nop':
+			print '\t' + '0'*32
+			print '\t' + '0x' + '0'*8
 		else:
 			print "ERROR"
 		
