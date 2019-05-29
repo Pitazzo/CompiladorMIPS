@@ -15,7 +15,7 @@ add r0 r1 r2
 2. Introducir línea a línea instrucciones en formato `código_operación rX rX ...`
 
 ## Instrucciones soportadas
-Actualmente el compilador soporta `add`, `addfp`, `lw`,`sw` y `beq`. Es decir, las necesarias para el proyecto de AOC2 de 2018
+Actualmente el compilador soporta `add`, `addfp`, `lw`, `sw` y `beq`. Es decir, las necesarias para el proyecto de AOC2 de 2018
 
 ## Requisitos
 - Python 3
