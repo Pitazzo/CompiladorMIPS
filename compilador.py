@@ -3,7 +3,6 @@ from sys import stdin
 argumentos = [""]
 aritmeticas = ['add', 'addfp']
 inmediato = ['lw', 'sw', 'beq']
-
 while argumentos[0] != 'fin':
 	argumentos = stdin.readline()[0:-1].split(' ')
 	if argumentos[0] != 'fin':
@@ -18,10 +17,10 @@ while argumentos[0] != 'fin':
 							 + ' ' + bin(int(argumentos[3][1:]))[2:].zfill(5) \
 							 + ' ' + bin(int(argumentos[1][1:]))[2:].zfill(5) \
 							 + ' ' + '00000000000'
-				print '\t' + salida
+				print('\t' + salida)
 				salida = salida.replace(' ', '')
 				numCeros = 8 - len(hex(int(salida, 2))[2:])
-				print '\t' + '0'*numCeros + hex(int(salida, 2))[2:]
+				print('\t' +'0x' + '0'*numCeros + hex(int(salida, 2))[2:])
 			else:
 				if argumentos[0] == 'lw':
 					salida = '000010'
@@ -32,13 +31,12 @@ while argumentos[0] != 'fin':
 				salida = salida + ' ' + bin(int(argumentos[2][1:]))[2:].zfill(5) \
 							 + ' ' + bin(int(argumentos[1][1:]))[2:].zfill(5) \
 							 + ' ' + bin(int(argumentos[3]))[2:].zfill(16)
-				print '\t' + salida
+				print('\t' + salida)
 				salida = salida.replace(' ', '')
 				numCeros = 8 - len(hex(int(salida, 2))[2:])
-				print '\t' + '0'*numCeros + hex(int(salida, 2))[2:]
+				print('\t' +'0x' + '0'*numCeros + hex(int(salida, 2))[2:])
 		elif argumentos[0] == 'nop':
-			print '\t' + '0'*32
-			print '\t' + '0x' + '0'*8
+			print('\t' + '0'*32)
+			print('\t' + '0x' + '0'*8)
 		else:
-			print "ERROR"
-		
+			print("ERROR")
